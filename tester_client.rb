@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'websocket-client-simple'
 
-url = ARGV.shift || 'ws://71.190.177.92:8080'
+url = ARGV.shift || 'ws://192.168.5.68:8080'
 
 ws = WebSocket::Client::Simple.connect url
 
