@@ -1,4 +1,4 @@
-require 'rubygems'
+# require 'rubygems'
 require 'websocket-client-simple'
 
 url = ARGV.shift || 'ws://192.168.5.68:8080'
@@ -10,7 +10,7 @@ ws.on :message do |msg|
 end
 
 ws.on :open do
-  ws.send 'hello!!!'
+  ws.send "I'm connected."
 end
 
 ws.on :close do |e|
@@ -20,6 +20,8 @@ end
 
 ws.on :error do |e|
   p e
+  puts "Something went wrong (perhaps the server is no longer running?). Exiting..."
+  exit 1
 end
 
 loop do
